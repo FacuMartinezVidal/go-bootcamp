@@ -48,16 +48,12 @@ func New(name string, age int, email string) (*User, error) {
 	}, nil
 }
 
-// method
-// we have to pass the receiver as a pointer to the struct, so that we can modify the struct\
-
-func (u *User) GetAge() int {
-	return u.age
-}
-
 func (u *User) String() string {
 	return fmt.Sprintf("Name: %s, Age: %d, Email: %s", u.name, u.age, u.email)
 }
+
+// method
+// we have to pass the receiver as a pointer to the struct, so that we can modify the struct\
 
 func (a *Admin) String() string {
 	return fmt.Sprintf("Name: %s, Age: %d, Email: %s, Credential: %s, Password: %s", a.name, a.age, a.email, a.credential, a.password)

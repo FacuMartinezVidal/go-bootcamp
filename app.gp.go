@@ -5,6 +5,10 @@ import (
 	"go-bootcamp/user"
 )
 
+type stringer interface {
+	String() string
+}
+
 // declaring function
 func main() {
 
@@ -12,17 +16,19 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 		return
-	} else {
-		fmt.Println(u)
 	}
 
 	a, err := user.NewAdmin("John", 25, "jhon@gmail", "admin", "password")
-
 	if err != nil {
 		fmt.Println(err)
 		return
-	} else {
-		fmt.Println(a)
 	}
 
+	printer(u)
+	printer(a)
+
+}
+
+func printer(s stringer) {
+	fmt.Println(s.String())
 }
