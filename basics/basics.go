@@ -1,4 +1,4 @@
-package main
+package basics
 
 func basics() {
 	var h, i int
