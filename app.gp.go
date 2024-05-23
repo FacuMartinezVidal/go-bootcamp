@@ -20,7 +20,7 @@ func main() {
 	add(d, e)
 
 	const text = "Hello, World!"
-	output(text)
+	Output(text)
 
 	//if statement
 	var h, i int
@@ -55,9 +55,20 @@ func main() {
 		println("Three")
 	}
 
+	age := 18
+
+	println(pointer(&age))
+
 }
 
-func output(text string) {
+func pointer(age *int) int {
+	return *age + 10
+
+}
+
+// with upper case function name, it can be accessed from other packages, it is called exported function
+
+func Output(text string) {
 	println(text)
 }
 
