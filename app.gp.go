@@ -1,83 +1,28 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"go-bootcamp/user"
+)
 
 // declaring function
 func main() {
-	// Declaring variables
-	//var a int
-	//var b = 60
 
-	//taking input from user, & is used to get the address of the variable, it called pointer
-	//fmt.Scan(&a)
-
-	//declaring multiple variables
-	d, e := 14, 20
-
-	//declaring constant
-	const f = 10
-
-	add(d, e)
-
-	const text = "Hello, World!"
-	Output(text)
-
-	//if statement
-	var h, i int
-	fmt.Scan(&h)
-	fmt.Scan(&i)
-	if h == 10 && i == 10 {
-		println("Both are equal")
+	u, err := user.New("John", 25, "jhon@gmail")
+	if err != nil {
+		fmt.Println(err)
+		return
 	} else {
-		println("Both are not equal")
+		fmt.Println(u)
 	}
 
-	//for loop
-	for j := 0; j < 5; j++ {
-		println(j)
-		if j == 3 {
-			break
-		} else {
-			continue
-		}
+	a, err := user.NewAdmin("John", 25, "jhon@gmail", "admin", "password")
 
+	if err != nil {
+		fmt.Println(err)
+		return
+	} else {
+		fmt.Println(a)
 	}
 
-	//switch case
-	var k int
-	fmt.Scan(&k)
-	switch k {
-	case 1:
-		println("One")
-	case 2:
-		println("Two")
-	case 3:
-		println("Three")
-	}
-
-	age := 18
-
-	println(pointer(&age))
-
-}
-
-func pointer(age *int) int {
-	return *age + 10
-
-}
-
-// with upper case function name, it can be accessed from other packages, it is called exported function
-
-func Output(text string) {
-	println(text)
-}
-
-func add(a int, b int) (int, string) {
-	return a + b, "Addition is done"
-}
-
-func sub(a int, b int) (result int) {
-	result = a - b
-	//return result
-	return
 }
