@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go-bootcamp/user"
+	"go-bootcamp/list"
 )
 
 type stringer interface {
@@ -11,21 +11,10 @@ type stringer interface {
 
 // declaring function
 func main() {
-
-	u, err := user.New("John", 25, "jhon@gmail")
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
-	a, err := user.NewAdmin("John", 25, "jhon@gmail", "admin", "password")
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
-	printer(u)
-	printer(a)
+	listed := list.List()
+	fmt.Println(*listed)
+	sliced := list.Slice()
+	fmt.Println(*sliced)
 
 }
 

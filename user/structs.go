@@ -13,6 +13,8 @@ type User struct {
 	createdAt time.Time
 }
 
+// inheritance
+
 type Admin struct {
 	User
 	credential string
