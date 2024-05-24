@@ -6,6 +6,8 @@ import (
 	"time"
 )
 
+// struct is a collection of fields
+
 type User struct {
 	name      string
 	age       int

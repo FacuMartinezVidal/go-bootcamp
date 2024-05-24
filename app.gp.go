@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"go-bootcamp/list"
 )
 
 type stringer interface {
@@ -11,11 +10,7 @@ type stringer interface {
 
 // declaring function
 func main() {
-	listed := list.List()
-	fmt.Println(*listed)
-	sliced := list.Slice()
-	fmt.Println(*sliced)
-
+	
 }
 
 func printer(s stringer) {
